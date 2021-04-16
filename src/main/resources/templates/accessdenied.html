@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>no perms to acces this page</h1>
+
+Go to the <a th:href="@{/}">home page</a><br>
+<form th:action="@{/logout}" method="post">
+<input type="submit" value="logout">
+</form>
+
+</body>
+</html>
