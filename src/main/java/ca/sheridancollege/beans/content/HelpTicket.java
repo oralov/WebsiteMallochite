@@ -1,4 +1,4 @@
-package ca.sheridancollege.beans;
+package ca.sheridancollege.beans.content;
 
 import java.util.ArrayList;
 import java.util.List;
