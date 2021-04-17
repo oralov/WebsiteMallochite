@@ -26,7 +26,7 @@ public class UserDetailsServiceInpl implements org.springframework.security.core
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		//find a user based on the username
-		ca.sheridancollege.beans.User user = userRepo.findByUsername(username);
+		ca.sheridancollege.beans.users.User user = userRepo.findByUsername(username);
 		//if the user cant be found 
 		if (user == null) {
 			System.out.println("User "+ username + " was not found in the database");

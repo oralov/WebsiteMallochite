@@ -1,4 +1,4 @@
-package ca.sheridancollege.beans;
+package ca.sheridancollege.beans.users;
 
 import lombok.Builder;
 

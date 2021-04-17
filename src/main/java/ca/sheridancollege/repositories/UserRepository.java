@@ -3,7 +3,7 @@ package ca.sheridancollege.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import ca.sheridancollege.beans.User;
+import ca.sheridancollege.beans.users.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {

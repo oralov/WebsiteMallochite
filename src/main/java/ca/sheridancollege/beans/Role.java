@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import ca.sheridancollege.beans.users.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

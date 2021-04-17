@@ -1,4 +1,4 @@
-package ca.sheridancollege.beans;
+package ca.sheridancollege.beans.users;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +11,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import ca.sheridancollege.beans.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@SuperBuilder
 @Entity
 abstract public class User
 {
