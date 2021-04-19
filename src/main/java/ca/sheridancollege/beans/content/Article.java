@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +29,9 @@ public class Article {
 	
 	private String title;
 	private String body;
+	
+	
+	@OneToOne
 	private Optional<User> author;
 	
 }
