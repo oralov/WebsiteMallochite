@@ -1,5 +1,14 @@
+/*
+*	Author: 	Andrew Hollands
+*	Date:		April 19th 2021
+* 	Worked on:	gotToWiki() , addWiki() , getWikiList , goToWikiArticle
+*/
+
 package ca.sheridancollege.controllers;
 
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,30 +17,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ca.sheridancollege.beans.content.Article;
+import ca.sheridancollege.repositories.ArticleRepository;
 
 @Controller
-public class HomeController {
+public class HomeController 
+{
+	
+	@Autowired ArticleRepository articleRepo;
+	
 	
 	@GetMapping("/")
-	public String goHome() {
+	public String goHome() 
+	{
 		return "home.html";
 	}
 	
 	
-	//	Author: Andrew Hollands
-	//	Date:	April 19th 2021
-	// gotToWiki() , addWiki() , getWikiList
+	@GetMapping("/wiki/")
+	public String goToWikiList( Model model ) 
+	{
+		ArrayList<Article> wikiArticles = (ArrayList<Article>) articleRepo.findAll();
+		model.addAttribute( "wikiArticles" , wikiArticles );
+		
+		return "wikiListDisplay.html";
+	}
+	
 	//	This method takes an article ID as input
 	@GetMapping("/wiki/{id}")
 	public String goToWikiArticle( @PathVariable int id , Model model ) 
-	{
-		
-		
-		return "wikiArticleDisplay.html";
-	}
-	
-	@GetMapping("/wiki/")
-	public String goToWikiList( Model model ) 
 	{
 		
 		
@@ -43,7 +56,7 @@ public class HomeController {
 	{
 		
 		
-		return "wikiArticleDisplay.html";
+		return "addWikiArticle.html";
 	}
 	
 	@PostMapping("/wiki/add")
@@ -51,7 +64,7 @@ public class HomeController {
 	{
 		
 		
-		return "wikiArticleDisplay.html";
+		return "addWikiArticle.html";
 	}
 
 }

@@ -1,0 +1,1 @@
+INSERT INTO Article ( title , body ) VALUES ( 'article1' , 'lorem ipsum vertate' );

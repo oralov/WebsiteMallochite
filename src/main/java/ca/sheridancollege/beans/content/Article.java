@@ -27,7 +27,6 @@ public class Article {
 	
 	private String title;
 	private String body;
-	private String templateLocation;
 	private Optional<User> author;
 	
 }
