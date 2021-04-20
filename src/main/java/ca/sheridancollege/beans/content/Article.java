@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,8 +28,8 @@ public class Article {
 	private Integer id;
 	
 	private String title;
-	private String body;
-	private String templateLocation;
-	private Optional<User> author;
+	private String body; // make arraylist of strings
+	
+	//private Optional<User> author;
 	
 }

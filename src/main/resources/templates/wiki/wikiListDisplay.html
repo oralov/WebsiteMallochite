@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Wiki</title>
+	</head>
+	
+	<body>
+		<h2>Wiki Articles</h2>
+		
+		<span th:each="article : ${wikiArticles}">
+			<a th:href="@{/wiki/{id}(id=${article.id})}" th:text="${article.title}"></a><br>
+		</span>
+		<a href="/wiki/add">add new article</a>
+	</body>
+</html>

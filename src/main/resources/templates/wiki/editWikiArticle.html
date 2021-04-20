@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Wiki</title>
+	</head>
+	
+	<body>
+		<form action="#" th:action="@{/wiki/edit/{id}(id=${article.id})}" th:object="${article}" method="POST">
+			<p>Title: </p><input type="text" th:text="${article.title}"  th:field="*{title}" />
+			<p>Body: </p><textarea th:text="${article.body}" th:field="*{body}"/></textarea>
+			<input type ="submit" value="Publish" />
+			<a href="/wiki">back</a>
+		</form>
+	</body>
+</html>
