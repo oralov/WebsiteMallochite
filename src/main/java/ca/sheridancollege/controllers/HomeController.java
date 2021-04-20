@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import ca.sheridancollege.beans.content.Article;
 import ca.sheridancollege.repositories.ArticleRepository;
@@ -55,7 +56,7 @@ public class HomeController
 	@GetMapping("/wiki/add")
 	public String addWiki( Model model ) 
 	{
-		
+		model.addAttribute( new Article() );
 		
 		return "wiki/addWikiArticle.html";
 	}
@@ -63,9 +64,31 @@ public class HomeController
 	@PostMapping("/wiki/add")
 	public String addWiki( Model model , @ModelAttribute Article article ) 
 	{
-		
+		articleRepo.save( article );
 		
 		return "wiki/addWikiArticle.html";
+	}
+	
+	@GetMapping("/wiki/edit/{id}")
+	public String editWikiArticle( @PathVariable int id , Model model ) 
+	{
+		Article article = articleRepo.findById( id );
+		model.addAttribute( article );
+		
+		return "wiki/editWikiArticle.html";
+	}
+	
+	@PostMapping("/wiki/edit/{id}")
+	public ModelAndView  editWikiArticle( @PathVariable int id , Model model , @ModelAttribute Article article ) 
+	{
+		Article newArticle = new Article();
+		newArticle.setTitle( article.getTitle() ); 
+		newArticle.setBody( article.getBody() );
+		
+		articleRepo.deleteById( id );
+		articleRepo.save( newArticle );
+	
+		return new ModelAndView("redirect:/wiki" );
 	}
 
 }
