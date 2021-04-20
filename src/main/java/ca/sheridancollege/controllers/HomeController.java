@@ -33,22 +33,22 @@ public class HomeController
 	}
 	
 	
-	@GetMapping("/wiki/")
+	@GetMapping("/wiki")
 	public String goToWikiList( Model model ) 
 	{
 		ArrayList<Article> wikiArticles = (ArrayList<Article>) articleRepo.findAll();
 		model.addAttribute( "wikiArticles" , wikiArticles );
 		
-		return "wikiListDisplay.html";
+		return "wiki/wikiListDisplay.html";
 	}
 	
 	//	This method takes an article ID as input
 	@GetMapping("/wiki/{id}")
-	public String goToWikiArticle( @PathVariable int id , Model model ) 
+	public String goToWikiArticle( @PathVariable int id , Model model , @ModelAttribute Article article ) 
 	{
+		model.addAttribute( article );
 		
-		
-		return "wikiArticleDisplay.html";
+		return "wiki/wikiArticleDisplay.html";
 	}
 
 	@GetMapping("/wiki/add")
@@ -56,7 +56,7 @@ public class HomeController
 	{
 		
 		
-		return "addWikiArticle.html";
+		return "wiki/addWikiArticle.html";
 	}
 	
 	@PostMapping("/wiki/add")
@@ -64,7 +64,7 @@ public class HomeController
 	{
 		
 		
-		return "addWikiArticle.html";
+		return "wiki/addWikiArticle.html";
 	}
 
 }

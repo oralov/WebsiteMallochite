@@ -30,8 +30,6 @@ public class Article {
 	private String title;
 	private String body;
 	
-	
-	@OneToOne
-	private Optional<User> author;
+	//private Optional<User> author;
 	
 }

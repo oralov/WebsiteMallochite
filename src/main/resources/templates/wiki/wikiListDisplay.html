@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeLeaf.org">
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Wiki</title>
@@ -8,8 +8,8 @@
 	<body>
 		<h2>Wiki Articles</h2>
 		
-		<span th:foreach="article : ${wikiArticles}">
-			<a th:href="@{/wiki/{id}(id=${article.id})}" th:text="${article.name}"></a>
+		<span th:each="article : ${wikiArticles}">
+			<a th:href="@{/wiki/{id}(id=${article.id})}" th:text="${article.title}"></a><br>
 		</span>
 	</body>
 </html>
