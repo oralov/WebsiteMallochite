@@ -46,6 +46,7 @@ public class HomeController
 	@GetMapping("/wiki/{id}")
 	public String goToWikiArticle( @PathVariable int id , Model model , @ModelAttribute Article article ) 
 	{
+		article = articleRepo.findById( id );
 		model.addAttribute( article );
 		
 		return "wiki/wikiArticleDisplay.html";

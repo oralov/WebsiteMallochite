@@ -28,7 +28,7 @@ public class Article {
 	private Integer id;
 	
 	private String title;
-	private String body;
+	private String body; // make arraylist of strings
 	
 	//private Optional<User> author;
 	
