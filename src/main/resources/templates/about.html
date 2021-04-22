@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css" th:href="@{css/styles.css}"/>
+<link rel="stylesheet" type="text/css" media="all" href="../static/css/about.css" th:href="@{css/about.css}"/>
+<title>Insert title here</title>
+</head>
+<body>
+
+<header><img id="logo" th:src="@{images/Logo.png}"></header>
+		<div class="topnav">
+		<a href="/">Home</a>
+		<a href="/about">About Mallochite</a>
+		<a href="">FAQ</a>
+		<a href="/goWiki">Wiki</a>
+		<a href="">Download</a>
+		<a href="">Contact Us</a>
+		</div>
+
+<h1>About Mallochite</h1>
+
+<div id="about">
+<p id="aboutArticle">
+Mallochite is an open source peer-to-peer chat application. With Mallochite you can exchange messages with other users of Mallochite!
+You also are able to send and recieve the photos, philes, packages via our data exchange module, implemented in the application! 
+You can make voice calls, video calls, send emojis and many many other things! 
+Now, you will say there are a lot of applications having same features. How is this different?
+And the Answer for that could be as simple as "We are just more awesome than all of those suckas"
+But in fact Mallochite is completely different from other applications providing same array of features because it is safer.
+You can't see it but it is there. 
+Mallochite is using completely different networking paradigm which does not require servers which usually collect data from users. 
+No such things happen in Mallochite's back-end. We do not collect any forms of data from users. We do not store the messages you send on remote server databases.
+All data traveling through the network is encrypted and signed. There are only two users who can see your messages: You and whoever you are chating with. 
+
+</p> <br>
+</div>
+<h1>Our Team</h1> <br>
+<div id="developers">
+<img class="developers" th:src="@{images/Andrew.jpg}">
+<p>Andrew Hollands - The Boss Guy</p></br>
+<img class="developers" th:src="@{images/Mansur.jpg}">
+<p>Mansur Oralov - The Administrative Manager Guy </p></br>
+<img class="developers" th:src="@{images/Sean.jpg}">
+<p>Sean Brachvogel - The Database Guy</p></br>
+<p>Joseph Escober - The Test Guy</p>
+</div>
+
+<footer><p>Mallochite, Sheridan College  2021</p></footer>
+
+</body>
+</html>

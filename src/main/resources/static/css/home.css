@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+#image{
+	height: 400px;
+	width: 400px;
+}
+
+#homeTable{
+	position: absolute;
+	bottom: 30%;
+	margin-right:2%;
+	margin-left:2%;
+}
+
+#pitch{
+	text-align: center;
+	font-size: 15pt;
+}
+
+#pitchAuthor{
+	text-align: right;
+	font-style: italic;
+	font-size:16pt;
+}

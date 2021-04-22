@@ -1,9 +1,13 @@
-package ca.sheridancollege.beans.content;
+package ca.sheridancollege.beans;
+
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,14 +19,15 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-public class HelpTicket 
-{
+public class Article {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String subject;
-	private String message;
-	private String sendersEmail;
-	private String priority;
+	private String title;
+	private String body; // make arraylist of strings
+	
+	//private Optional<User> author;
+	
 }

@@ -32,7 +32,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
 		
-		
+		.antMatchers("/wiki").permitAll()
+        .antMatchers("/wiki/{id}").permitAll()
+        .antMatchers("/wiki/add").hasAnyRole("ADMIN", "AUTHENTICATED")
+        .antMatchers(HttpMethod.POST, "/wiki/add").hasAnyRole("ADMIN", "AUTHENTICATED")
+
+        .antMatchers("/wiki/edit/{id}").hasAnyRole("ADMIN", "AUTHENTICATED")
+        .antMatchers(HttpMethod.POST, "/wiki/edit/{id}").hasAnyRole("ADMIN", "AUTHENTICATED")
 		.antMatchers("/h2-console/**").permitAll()
 		.antMatchers("/","/**").permitAll()
 		

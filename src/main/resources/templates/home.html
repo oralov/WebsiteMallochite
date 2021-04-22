@@ -2,10 +2,39 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
+		<link rel="stylesheet" type="text/css" media="all" href="../static/css/styles.css" th:href="@{css/styles.css}"/>
+		<link rel="stylesheet" type="text/css" media="all" href="../static/css/home.css" th:href="@{css/home.css}"/>
 		<title>Insert title here</title>
 	</head>
 		<body>
-		<h2>Home page</h2>
-		<a href="/wiki">wiki</a>
+		
+		<header><img id="logo" th:src="@{images/Logo.png}"></header>
+		<div class="topnav">
+		<a th:href="@{/}">Home</a>
+		<a href="/about">About Mallochite</a>
+		<a href="">FAQ</a>
+		<a href="/goWiki">Wiki</a>
+		<a href="">Download</a>
+		<a href="">Contact Us</a>
+		</div>
+		
+	
+           
+          <table id="homeTable">
+          <tr>
+          <td><img id="image"  th:src="@{images/logo.png}"/></td>
+          <td><p id="pitch">Our private data, in the free market, is treated as a commodity to be bought and sold. 
+                 Popular chat applications like discord or whatsapp hold little to no regard for your privacy. 
+                 Applications that offer chat services for free aren’t doing this out of kindness, but rather are using you as the commodity. 
+                 This is the issue Mallochite is trying to address. We believe that private communication should be free and open to all that seek it.
+          </p> <br>
+          <p id="pitchAuthor"> -Andrew Hollands</td>
+          </tr>
+          </table>
+           
+           
+           </div>
+           
+		<footer><p>Mallochite, Sheridan College  2021</p></footer>
 	</body>
 </html>

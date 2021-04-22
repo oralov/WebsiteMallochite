@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ca.sheridancollege.beans.content.Article;
+import ca.sheridancollege.beans.Article;
 import ca.sheridancollege.repositories.ArticleRepository;
 
 @Controller
@@ -35,7 +35,7 @@ public class HomeController
 	
 	//	This method finds all articles and stores them as
 	//	a list in the model object
-	@GetMapping("/wiki")
+	@GetMapping("/goWiki")
 	public String goToWikiList( Model model ) 
 	{
 		ArrayList<Article> wikiArticles = (ArrayList<Article>) articleRepo.findAll();
@@ -101,6 +101,11 @@ public class HomeController
 		articleRepo.save( newArticle );
 	
 		return new ModelAndView("redirect:/wiki" );
+	}
+	
+	@GetMapping("/about")
+	public String goAbout() {
+		return "about.html";
 	}
 
 }

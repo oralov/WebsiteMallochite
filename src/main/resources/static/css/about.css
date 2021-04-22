@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+h1{
+	text-align: center;
+	
+}
+
+#about{
+	position: relative;
+	left: 30%;
+	width: 40%;
+	text-align: justify;
+}
+
+.developers{
+	height: 250px;
+	width:200px;
+}
+
+#developers{
+	position: relative;
+	left: 45%;
+	width: 40%;
+}
+
+#aboutArticle{
+	font-size: 15pt;
+}
